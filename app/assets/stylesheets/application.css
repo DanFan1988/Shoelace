@@ -16,12 +16,21 @@ body {
   margin: 0px;
 }
 
-h1 {
-	font-size: 48px;
+header {
 	display: block;
 	background-color: #27709b;
 	color: #fff;
 	margin-top: 0px;
 	padding: 50px;
+}
+
+header h1 {
+	font-size: 60px;
 	font-weight:normal;
+	margin: 0px;
+
+}
+
+header p {
+	font-size: 24px;
 }

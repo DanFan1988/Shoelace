@@ -19,7 +19,7 @@ ul {
 }
 
 .navbar-wrap {
-  margin: -15px 0px -15px 0px;
+  margin: -10px 0px -15px 0px;
 }
 
 .navbar-brand {
@@ -28,10 +28,9 @@ ul {
 
 .navbar-brand > a {
   display: block;
-  font-weight: bold;
   font-size: 30px;
   padding: 18px 20px;
-  margin-bottom: -18px;
+  margin: 0px 0px -18px 50px;
 }
 
 .navbar-nav > ul {
