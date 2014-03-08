@@ -5,7 +5,13 @@ Shoelace.Routers.Router = Backbone.Router.extend({
 
 	routes: {
 		"": "home",
-		"buttons": "buttons"
+		"buttons": "buttons",
+		"tabs": "tabs",
+		"tables": "tables",
+		"forms": "forms",
+		"dropdowns": "dropdowns",
+		"navbar": "navbar",
+		"modals": "modals"
 	},
 
 	home: function(){
@@ -15,6 +21,16 @@ Shoelace.Routers.Router = Backbone.Router.extend({
 
 	buttons: function(){
 		var view = new Shoelace.Views.Buttons
+		this._swapView(view)
+	},
+
+	forms: function()
+		var view = new Shoelace.Views.Forms
+		this._swapView(view)
+	},
+
+	tabs: function(){
+		var view = new Shoelace.Views.Tabs
 		this._swapView(view)
 	},
 
