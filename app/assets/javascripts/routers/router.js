@@ -24,7 +24,7 @@ Shoelace.Routers.Router = Backbone.Router.extend({
 		this._swapView(view)
 	},
 
-	forms: function()
+	forms: function(){
 		var view = new Shoelace.Views.Forms
 		this._swapView(view)
 	},
