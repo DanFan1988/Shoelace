@@ -20,7 +20,15 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :development do
+  gem "better_errors"
+end
+
+gem "binding_of_caller"
 gem 'jquery-rails'
+gem 'backbone-on-rails'
+gem 'ejs'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
