@@ -1,0 +1,52 @@
+.btn {
+	display: inline-block;
+	text-align: center;
+	padding: 10px;
+	cursor: pointer;
+	font-size: 14px;
+	border-radius: 10px;
+	background-color: white;
+	color: black;
+	border: 1px solid black;
+	font: $font-stack;
+	min-width: 75px;
+}
+
+.btn:hover{
+	background-color: #dedede;
+}
+
+.btn-blue {
+	background-color: $primary-color;
+	color: white;
+}
+
+.btn-blue:hover {
+	background-color: #3333cc;
+}
+
+.btn-green {
+	background-color: green; 
+	color: white;
+}
+
+.btn-green:hover {
+	background-color: darkgreen;
+}
+
+.btn-orange {
+	background-color: orange;
+}
+
+.btn-orange:hover {
+	background-color: darkorange;
+}
+
+.btn-red {
+	background-color:red;
+	color: white;
+}
+
+.btn-red:hover{
+	background-color: darkred;
+}

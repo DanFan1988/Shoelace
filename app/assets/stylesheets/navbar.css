@@ -1,5 +1,5 @@
 a {
-  color: #27709b;
+  color: $primary-color;
   text-decoration: none;
 }
 
@@ -14,7 +14,6 @@ ul {
 }
 
 .navbar {
-  background: #ffffff;
   border-bottom: 1px solid #333;
 }
 
@@ -74,7 +73,7 @@ ul {
 .navbar-nav-drop-down > li > a {
   display: block;
   padding: 5px 10px;
-  color: #27709b;
+  color: $primary-color;
 }
 
 .navbar-nav-drop-down > li:hover > a {
