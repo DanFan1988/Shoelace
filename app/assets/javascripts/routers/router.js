@@ -39,6 +39,11 @@ Shoelace.Routers.Router = Backbone.Router.extend({
 		this._swapView(view)
 	},
 
+	dropdowns: function(){
+		var view = new Shoelace.Views.Dropdowns
+		this._swapView(view)
+	},
+
 	_swapView: function(view){
 		this._currentView && this._currentView.remove();
 		this._currentView = view

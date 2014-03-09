@@ -1,0 +1,12 @@
+.dropdowns {
+	ul {
+		margin-top: 0px;
+		padding-left:10px;
+		border: solid 2px black;
+		width: 150px;
+		li {
+			margin: 10px 5px;
+			border-bottom: 1px solid lightgray;
+		}
+	}
+}

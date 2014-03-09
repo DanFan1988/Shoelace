@@ -24,17 +24,15 @@
 </div>
 
 <script>
-$(function () {
+	$(function(){
     var tabContainers = $('div.tabs div');
     
     $('div.tabs ul a').click(function(event){
-   			event.preventDefault();
-        tabContainers.hide().filter(this.hash).show();
-        
-        $('div.tabs ul a').removeClass('selected');
-        $(this).addClass('selected');
-        
-        return;
+ 			event.preventDefault();
+      tabContainers.hide().filter(this.hash).show();
+      
+      $('div.tabs ul a').removeClass('selected');
+      $(this).addClass('selected');
     }).filter(':first').click();
-});
+	});
 </script>

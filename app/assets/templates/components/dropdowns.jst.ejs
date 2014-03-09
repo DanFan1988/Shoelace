@@ -1,0 +1,35 @@
+<header>
+	<div class="title">Dropdowns</div>
+	<p>Wheeeee</p>
+</header>
+
+<div class="examples">
+	<div class="dropdowns">
+		<button class='btn btn-blue'>Click Me</button>
+		<ul>
+			<li><a href="#">Your Profile</a></li>
+			<li><a href="#">Edit Information</a></li>
+			<li><a href="#">Help</a></li>
+			<li><a href="#">Logout</a></li>
+		</ul>
+	</div>
+</div>
+
+<script>
+	$(function () {
+	  var dropdownContainer = $('div.dropdowns ul');
+	  dropdownContainer.hide()
+	  
+	  $('div.dropdowns button').bind({
+  	click: function(){
+	      dropdownContainer.show();
+	      $('div.dropdowns button').addClass('selected');
+    	},
+
+    	blur: function(){
+    		setTimeout(function(){dropdownContainer.hide();}, 150)
+      	$('div.dropdowns button').removeClass('selected');
+    	}
+		})
+	});
+</script>
