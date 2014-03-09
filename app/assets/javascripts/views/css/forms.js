@@ -1,8 +1,16 @@
 Shoelace.Views.Forms = Backbone.View.extend({
 	template: JST['css/forms'],
 
-		render: function(){
-		this.$el.html(this.template)
-		return this;
+	events: {
+		"submit": "prevent"
+	},
+
+	render: function(){
+	this.$el.html(this.template)
+	return this;
+	},
+
+	prevent: function(event){
+		event.preventDefault();
 	}
 });

@@ -15,6 +15,9 @@ ul {
 
 .navbar {
   border-bottom: 1px solid #333;
+  background-color: $primary-background;
+  position: fixed;
+  width: 100%;
 }
 
 .navbar-wrap {

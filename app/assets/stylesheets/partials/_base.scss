@@ -13,7 +13,8 @@ header {
 	background-color: $primary-color;
 	color: #fff;
 	margin-top: 0px;
-	padding: 50px;
+	padding: 90px 50px 30px 50px;
+	z-index: -1;
 
 	.title {
 	font-size: 60px;

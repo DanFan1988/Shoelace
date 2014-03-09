@@ -29,6 +29,11 @@ Shoelace.Routers.Router = Backbone.Router.extend({
 		this._swapView(view)
 	},
 
+	tables: function(){
+		var view = new Shoelace.Views.Tables
+		this._swapView(view)
+	},
+
 	tabs: function(){
 		var view = new Shoelace.Views.Tabs
 		this._swapView(view)
