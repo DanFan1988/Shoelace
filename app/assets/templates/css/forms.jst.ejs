@@ -29,3 +29,93 @@
 
   </form>
 </div>
+
+<div class="code">
+  <div class="tabs">
+    <ul>
+      <li><a href="#tab1">HTML</a></li>
+      <li><a href="#tab2">CSS</a></li>
+    </ul>
+
+    <div id="tab1">
+      <p class="explination"> Adding the class "form" to the from tag and "form-input" and "form-submit" to the input tags will apply the css.</p>
+
+     <xmp>
+  <form class="form">
+
+    <div class="form-title">Sign In</div>
+
+    <div class="form-input">
+      <label for="user-username">Username</label>
+      <input type="text" id="user-username" name="user[username]" placeholder="Username">
+    </div>
+
+    <div class="form-input">
+      <label for="user-email">Email</label>
+      <input type="email" id="user-email" name="user[email]" placeholder="Email">
+    </div>
+
+    <div class="form-input">
+      <label for="user-password">Password</label>
+      <input type="password" id="user-password" name="user[password]" placeholder="Password">
+    </div>
+
+    <div class="form-submit">
+      <input class="btn btn-blue" type="submit"value="Submit">
+    </div>
+
+  </form>
+    </xmp>
+    </div>
+    <div id="tab2">
+      <xmp>
+  .form {
+    font-size: 16px;
+    color: $primary-color;
+    border-radius: 10px;
+    padding:10px;
+    border: 1px solid #999;
+    border: inset 1px solid #333;
+    box-shadow: 0px 0px 8px gray;
+    width: 50%;
+    margin: auto;
+
+    label {
+      width: 80px;
+      display: inline-block;
+    }
+  }
+
+  .form-title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    margin: 5px 0px 20px 0px;
+  }
+
+  .form-input {
+    margin: 20px;
+    font: $font-stack;
+  }
+
+  .form-submit {
+    margin: 0px 0px 10px 20px;
+  }
+      </xmp>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(function(){
+    var tabContainers = $('div.tabs div');
+    
+    $('div.tabs ul a').click(function(event){
+      event.preventDefault();
+      tabContainers.hide().filter(this.hash).show();
+      
+      $('div.tabs ul a').removeClass('selected');
+      $(this).addClass('selected');
+    }).filter(':first').click();
+  });
+</script>
