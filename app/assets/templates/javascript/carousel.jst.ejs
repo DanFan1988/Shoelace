@@ -10,41 +10,52 @@
 			<li><img src='cat.jpg'></li>
 			<li><img src='penguin.jpg'></li>
 		</ul>
-	</div>
-
-	<div class="carousel-nav">
+			<div class="carousel-nav">
     <a href="#" class="carouselPrevious">Previous</a> &mdash;
     <a href="#" class="carouselNext">Next</a>
   </div>
+	</div>
+
+
 </div>
 
 <script>
-// var Carousel = (function(){
-
-// 	var carouselItems = $('div.carousel li').children();
-// 	carouselItems.load = function() {
-//   alert(this.width + 'x' + this.height);
-// 	}
-
-//   var initialize = function(){
-//   };
-
-//   return {
-//     initialize: initialize
-//   }
-// })();
-
-
 
 $('div.carousel li').children().first().load(function() {
+	 var totalItems = $('div.carousel li').children().length
    var carouselWidth = this.width
-   $('.carousel-nav').width(carouselWidth)
+   var carouselHeight = this.height
+   $('.carousel-nav').width(carouselWidth-4)
+   $('.carousel').width(carouselWidth)
+   $('.carousel ul').width(carouselWidth * (totalItems + 1))
+
+  var rotate = function(){
+	  $("div.carousel ul").animate({marginLeft:-(carouselWidth)},1000,function(){
+	      $(this).find("li:last").after($(this).find("li:first"));
+	      $(this).css({marginLeft:0});
+	  })
+	}
+  var rotator = setInterval(rotate,5000);
+
+   var rotateBack = function(){
+	  $("div.carousel ul").animate({marginLeft:(carouselWidth)},1000,function(){
+	      $(this).find("li:last").after($(this).find("li:first"));
+	      $(this).css({marginLeft:0});
+	  })
+	}
+
+	$('.carouselNext').click(function(event){
+		event.preventDefault();
+		rotate();
+		clearInterval(rotator);
+	})
+
+	$('.carouselPrevious').click(function(event){
+		event.preventDefault();
+		rotateBack();
+		clearInterval(rotator);
+	})
 });
-
-var carouselItems = $('div.carousel li').children();
-
-carouselItems.hide();
-
 
 
 
