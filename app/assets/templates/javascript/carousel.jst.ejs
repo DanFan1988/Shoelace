@@ -1,0 +1,51 @@
+<header>
+	<div class="title">Carousel</div>
+	<p>Around and 'round we go</p>
+</header>
+
+<div class='examples'>
+	<div class="carousel">
+		<ul>
+			<li><img src='dog.jpg'></li>
+			<li><img src='cat.jpg'></li>
+			<li><img src='penguin.jpg'></li>
+		</ul>
+	</div>
+
+	<div class="carousel-nav">
+    <a href="#" class="carouselPrevious">Previous</a> &mdash;
+    <a href="#" class="carouselNext">Next</a>
+  </div>
+</div>
+
+<script>
+// var Carousel = (function(){
+
+// 	var carouselItems = $('div.carousel li').children();
+// 	carouselItems.load = function() {
+//   alert(this.width + 'x' + this.height);
+// 	}
+
+//   var initialize = function(){
+//   };
+
+//   return {
+//     initialize: initialize
+//   }
+// })();
+
+
+
+$('div.carousel li').children().first().load(function() {
+   var carouselWidth = this.width
+   $('.carousel-nav').width(carouselWidth)
+});
+
+var carouselItems = $('div.carousel li').children();
+
+carouselItems.hide();
+
+
+
+
+</script>
