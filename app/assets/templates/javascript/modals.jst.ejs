@@ -58,5 +58,128 @@
 			}
 		})
 	})
+</script>
 
+<div class="code">
+	<div class="tabs">
+		<ul>
+			<li><a href="#tab1">HTML</a></li>
+			<li><a href="#tab2">CSS</a></li>
+			<li><a href="#tab3">JavaScript</a></li>
+		</ul>
+
+		<div id="tab1">
+	   	<p class="explination">The modal takes a bit more work to set up. However, it was necessary to allow multiple modals on the same page. There are a few cool things going on here... such as a data-modal that is set up for jQuery to find modal that corresponds to the modal button. Like Twitter Bootstrap's modal, there are some deeply nested divs. I used one less, for better or for worse, but the visual complexity of this component really makes these nested divs the lesser of the evils.</p>
+	   	<xmp>
+	<button class="btn btn-blue modal-button" data-modal="#modal1">Modal 1</button>
+	<button class="btn btn-green modal-button" data-modal="#modal2">Modal 2</button>
+
+	<div class='modal' id='modal1'>
+		<div class='modal-background'></div>
+    <div class='modal-content'>
+    	<div class='modal-header'>
+    		Modal header
+    		<button class="modal-x modal-close" data-modal="#modal1">x</button>
+    	</div>
+    	<div class='modal-body'>
+    		<p>In user interface design, a modal window is a child window that requires users to interact with it before they can return to operating the parent application, thus preventing the workflow on the application main window. Modal windows are often called heavy windows or modal dialogs because the window is often used to display a dialog box.</p>
+    		<p>Modal windows are commonly used in GUI systems to command user awareness and to display emergency states, although they have been argued to be ineffective for that use. Modal windows are prone to produce mode errors.</p>
+    		<p>On the Web, they are often used to show images in detail, in a pattern known as a Lightbox.</p>
+    	</div>
+	    <button class="btn btn-blue modal-bottom modal-close" data-modal="#modal1">Close</button>
+  	</div>
+	</div>
+			</xmp>
+	  </div>
+	  <div id="tab2">
+	    <xmp>
+	.modal-background {
+	    position: fixed; 
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	    background: black;
+	    opacity: 0.7;
+	    filter: alpha(opacity=50);
+	}
+
+	.modal-content {
+		border: 2px solid black;
+	  border-radius:8px;
+	  padding:20px;
+	  background-color: white;
+	  width: 500px;
+	  min-height: 500px;
+	  position: fixed;
+	  top: 15%;
+	  left: 50%;
+	  margin-left: -250px;
+	  opacity: 1.0;
+	  filter: alpha(opacity=100);
+	}
+
+	.modal-header {
+		height: 50px;
+		margin-top: 10px;
+		font-size: 20px;
+		font-weight: bold;
+		text-align: center;
+		border-bottom: 1px solid lightgray;
+		z-index: 1;
+	}
+
+	.modal-body {
+		margin: 20px;
+	}
+
+	.modal-bottom {
+		margin-top: 10px;
+		position: absolute;
+		bottom: 10px;
+		right: 10px;
+	}
+
+	.modal-x {
+		float: right;
+	}
+	    </xmp>
+	  </div>
+		<div id="tab3">
+	   	<p class="explination">A .load() method's callback sets the css attributes to make everything work. </p>
+
+	   	<xmp>
+	$(function () {
+	  var dropdownContainer = $('div.dropdowns ul');
+	  dropdownContainer.hide()
+	  
+	  $('div.dropdowns button').bind({
+	  	click: function(){
+	      dropdownContainer.show();
+	      $('div.dropdowns button').addClass('selected');
+    	},
+
+    	blur: function(){
+    		setTimeout(function(){dropdownContainer.hide();}, 150)
+      	$('div.dropdowns button').removeClass('selected');
+    	}
+		})
+	});
+			</xmp>
+	  </div>
+	</div>
+</div>
+
+<script>
+	$(function(){
+    var tabContainers = $('div.tabs div');
+    
+    $('div.tabs ul a').click(function(event){
+ 			event.preventDefault();
+      tabContainers.hide().filter(this.hash).show();
+      
+      $('div.tabs ul a').removeClass('selected');
+      $(this).addClass('selected');
+    }).filter(':first').click();
+	});
 </script>
