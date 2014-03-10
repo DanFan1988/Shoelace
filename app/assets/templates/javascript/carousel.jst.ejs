@@ -10,17 +10,14 @@
 			<li><img src='cat.jpg'></li>
 			<li><img src='penguin.jpg'></li>
 		</ul>
-			<div class="carousel-nav">
-    <a href="#" class="carouselPrevious">Previous</a> &mdash;
-    <a href="#" class="carouselNext">Next</a>
-  </div>
+		<div class="carousel-nav">
+  		<a href="#" class="carouselPrevious">Previous</a> &mdash;
+  		<a href="#" class="carouselNext">Next</a>
+		</div>
 	</div>
-
-
 </div>
 
 <script>
-
 $('div.carousel li').children().first().load(function() {
 	 var totalItems = $('div.carousel li').children().length
    var carouselWidth = this.width
@@ -56,7 +53,121 @@ $('div.carousel li').children().first().load(function() {
 		clearInterval(rotator);
 	})
 });
+</script>
 
+<div class="code">
+	<div class="tabs">
+		<ul>
+			<li><a href="#tab1">HTML</a></li>
+			<li><a href="#tab2">CSS</a></li>
+			<li><a href="#tab3">JavaScript</a></li>
+		</ul>
 
+		<div id="tab1">
+	   	<p class="explination">The HTML for the carousel is actually pretty straight forward. All "carousel" class and a "carousel-nav" class is all you need.</p>
 
+	   	<xmp>
+	<div class="carousel">
+		<ul>
+			<li><img src='dog.jpg'></li>
+			<li><img src='cat.jpg'></li>
+			<li><img src='penguin.jpg'></li>
+		</ul>
+		<div class="carousel-nav">
+  		<a href="#" class="carouselPrevious">Previous</a> &mdash;
+  		<a href="#" class="carouselNext">Next</a>
+		</div>
+	</div>
+			</xmp>
+	  </div>
+	  <div id="tab2">
+	   	<p class="explination">The magic happens in the Javascript that sets that sets css attributes. A crucial part of the CSS is the overflow: hidden; aspect. This causes images that are outside the carousels display width x length to not show.</p>
+	    <xmp>
+	.carousel {
+		overflow: hidden;
+		margin: auto;
+
+		ul {
+			padding: 0;
+			margin: 0;
+			-webkit-padding-start: 0px;
+		}
+
+		li {
+		  border: 2px solid black;
+		  text-align: center;
+		  list-style: none;
+		  float:  left;
+		}
+	}
+
+	.carousel-nav {
+		text-align: center;
+		margin: 0px;
+		border: 2px solid black;
+
+		.carouselPrevious, .carouselNext {
+			font-size: 20px;
+			margin: 50px;
+		}
+	}
+	    </xmp>
+	  </div>
+		<div id="tab3">
+	   	<p class="explination">A .load() method's callback sets the css attributes to make everything work. </p>
+
+	   	<xmp>
+	$('div.carousel li').children().first().load(function() {
+		 var totalItems = $('div.carousel li').children().length
+	   var carouselWidth = this.width
+	   var carouselHeight = this.height
+	   $('.carousel-nav').width(carouselWidth-4)
+	   $('.carousel').width(carouselWidth)
+	   $('.carousel ul').width(carouselWidth * (totalItems + 1))
+
+	  var rotate = function(){
+		  $("div.carousel ul").animate({marginLeft:-(carouselWidth)},1000,function(){
+		      $(this).find("li:last").after($(this).find("li:first"));
+		      $(this).css({marginLeft:0});
+		  })
+		}
+	  var rotator = setInterval(rotate,5000);
+
+	   var rotateBack = function(){
+		  $("div.carousel ul").animate({marginLeft:(carouselWidth)},1000,function(){
+		      $(this).find("li:last").after($(this).find("li:first"));
+		      $(this).css({marginLeft:0});
+		  })
+		}
+
+		$('.carouselNext').click(function(event){
+			event.preventDefault();
+			rotate();
+			clearInterval(rotator);
+		})
+
+		$('.carouselPrevious').click(function(event){
+			event.preventDefault();
+			rotateBack();
+			clearInterval(rotator);
+		})
+	});
+			</xmp>
+	  </div>
+	</div>
+
+</div>
+
+<script>
+	$(function(){
+    var tabContainers = $('div.tabs div');
+    
+    $('div.tabs ul a').click(function(event){
+ 			event.preventDefault();
+      tabContainers.hide().filter(this.hash).show();
+      
+      $('div.tabs ul a').removeClass('selected');
+      $(this).addClass('selected');
+    }).filter(':first').click();
+	});
 </script>

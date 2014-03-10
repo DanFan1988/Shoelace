@@ -61,3 +61,115 @@
 		</tr>
 	</table>
 </div>
+
+<div class="code">
+	<div class="tabs">
+		<ul>
+			<li><a href="#tab1">HTML</a></li>
+			<li><a href="#tab2">CSS</a></li>
+		</ul>
+
+		<div id="tab1">
+	   	<p class="explination">Just add water! I mean, the table class to your table.</p>
+
+	   <xmp>
+	<table class="table">
+		<tr>
+		  <th>#</th>
+		  <th>Firstname</th>
+		  <th>Lastname</th>
+		  <th>Team</th>
+		  <th>Points/Game</th>
+		  <th>Rebs/Game</th>
+		  <th>Asts/Game</th>
+		</tr>
+		<tr>
+		  <td>35</td>
+		  <td>Kevin</td> 
+		  <td>Durant</td>
+		  <td>Thunder</td> 
+		  <td>31.8</td>
+		  <td>7.7</td>
+		  <td>5.5</td>
+		</tr>
+		<tr>
+		  <td>7</td>
+		  <td>Carmelo</td> 
+		  <td>Anthony</td>
+		  <td>Knicks</td>
+		  <td>28.1</td>
+		  <td>8.4</td> 
+		  <td>3.1</td>
+		</tr>
+		<tr>
+		  <td>6</td>
+		  <td>LeBron</td> 
+		  <td>James</td>
+		  <td>Heat</td>
+		  <td>27.2</td>
+		  <td>6.9</td> 
+		  <td>6.4</td>
+		</tr>
+		<tr>
+		  <td>42</td>
+		  <td>Kevin</td> 
+		  <td>Love</td>
+		  <td>Timberwolves</td>
+		  <td>26.5</td>
+		  <td>13.2</td> 
+		  <td>4.1</td>
+		</tr>
+		<tr>
+		  <td>30</td>
+		  <td>Stephen</td> 
+		  <td>Curry</td>
+		  <td>Warriors</td>
+		  <td>23.6</td>
+		  <td>4.5</td> 
+		  <td>8.7</td>
+		</tr>
+	</table>
+		</xmp>
+	  </div>
+	  <div id="tab2">
+	    <xmp>
+	.table {
+		border: 2px solid black;
+		border-collapse: collapse;
+		margin: auto;
+
+		tr {
+			margin: 10px;
+		}
+
+		tr:nth-child(even) {
+			background-color: lightgray;
+		}
+
+		th, td {
+			padding:8px 15px;
+			border-bottom: 1.5px solid gray;
+		}
+
+		th {
+			border-bottom: 2px solid black;
+		}
+	}
+	    </xmp>
+	  </div>
+	</div>
+</div>
+
+<script>
+	$(function(){
+    var tabContainers = $('div.tabs div');
+    
+    $('div.tabs ul a').click(function(event){
+ 			event.preventDefault();
+      tabContainers.hide().filter(this.hash).show();
+      
+      $('div.tabs ul a').removeClass('selected');
+      $(this).addClass('selected');
+    }).filter(':first').click();
+	});
+</script>
