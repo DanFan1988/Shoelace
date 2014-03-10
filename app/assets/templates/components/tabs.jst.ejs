@@ -36,3 +36,104 @@
     }).filter(':first').click();
 	});
 </script>
+
+<div class="code">
+	<div class="tabs">
+		<ul>
+			<li><a href="#tab1">HTML</a></li>
+			<li><a href="#tab2">CSS</a></li>
+			<li><a href="#tab3">JavaScript</a></li>
+		</ul>
+
+		<div id="tab1">
+	   	<p class="explination">Yo dawg, so I heard you like tabs so we put your tab's code in a tab in a page about tabs. Simply add a "tabs" class to a div surrounding your ul and individual divs. Make sure to set your anchor tag's (that are in li's) hrefs to the id the div you want it to open.</p>
+	   	<xmp>
+	<div class="tabs">
+		<ul>
+			<li><a href="#tab1">USA</a></li>
+			<li><a href="#tab2">Canada</a></li>
+			<li><a href="#tab3">Mexico</a></li>
+		</ul>
+
+		<div id="tab1">
+	    <p>The United States of America (USA), commonly referred to as the United States (US), America or simply the States, is a federal republic consisting of 50 states and a federal district. The 48 contiguous states and the federal district of Washington, D.C., are in central North America between Canada and Mexico. The state of Alaska is the northwestern part of North America and the state of Hawaii is an archipelago in the mid-Pacific. The country also has five populated and nine unpopulated territories in the Pacific and the Caribbean. At 3.79 million square miles (9.83 million km2) in total and with around 317 million people, the United States is the fourth-largest country by total area and third largest by population. It is one of the world's most ethnically diverse and multicultural nations, the product of large-scale immigration from many countries.[12] The geography and climate of the United States is also extremely diverse, and it is home to a wide variety of wildlife.</p>
+	  </div>
+	  <div id="tab2">
+	    <p>Canada is a country in North America consisting of 10 provinces and 3 territories. Located in the northern part of the continent, it extends from the Atlantic to the Pacific and northward into the Arctic Ocean. At 9.98 million square kilometres in total, Canada is the world's second-largest country by total area, and its common border with the United States is the world's longest land border shared by the same two countries.</p>
+	  </div>
+	  <div id="tab3">
+	    <p>Mexico, officially the United Mexican States is a federal republic in North America. It is bordered on the north by the United States; on the south and west by the Pacific Ocean; on the southeast by Guatemala, Belize, and the Caribbean Sea; and on the east by the Gulf of Mexico. Covering almost two million square kilometres (over 760,000 sq mi), Mexico is the fifth largest country in the Americas by total area and the 13th largest independent nation in the world. With an estimated population of over 113 million, it is the eleventh most populous and the most populous Spanish-speaking country in the world and the second most populous country in Latin America. Mexico is a federation comprising thirty-one states and a Federal District, the capital city.</p>
+	  </div>
+	</div>
+			</xmp>
+	  </div>
+	  <div id="tab2">
+	    <xmp>
+	 $primary-color: #27709b;
+
+	.tabs {
+		border: 2px solid black;
+
+		ul {
+			list-style: none;
+			padding-left: 0px;
+			margin-left: 8px;
+			li {
+				display: inline-block;
+				margin: 0px;
+				a {
+					  color: $primary-color;
+	 				  text-decoration: none;
+	 				  padding: 10px 20px;
+				}
+
+				a.selected {
+					border: 1px;
+					border-bottom: 0px;
+					border-style: solid;
+					background-color: lightgray;
+				}
+			}
+		}
+
+		div {
+			border: solid 1px black;
+			padding-left: 10px;
+			margin: 5px;
+			margin-top: 0px;
+		}
+	}
+	    </xmp>
+	  </div>
+		<div id="tab3">
+	   	<p class="explination">Simple hide and show methods make this work.</p>
+	   	<xmp>
+	$(function(){
+    var tabContainers = $('div.tabs div');
+    
+    $('div.tabs ul a').click(function(event){
+ 			event.preventDefault();
+      tabContainers.hide().filter(this.hash).show();
+      
+      $('div.tabs ul a').removeClass('selected');
+      $(this).addClass('selected');
+    }).filter(':first').click();
+	});
+			</xmp>
+	  </div>
+	</div>
+</div>
+
+<script>
+	$(function(){
+    var tabContainers = $('div.tabs div');
+    
+    $('div.tabs ul a').click(function(event){
+ 			event.preventDefault();
+      tabContainers.hide().filter(this.hash).show();
+      
+      $('div.tabs ul a').removeClass('selected');
+      $(this).addClass('selected');
+    }).filter(':first').click();
+	});
+</script>

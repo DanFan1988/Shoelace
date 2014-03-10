@@ -12,56 +12,137 @@
 		</ul>
 
 		<div id="tab1">
-	   	<p class="explination">Just add a "dropdowns" class to a div around your button with a ul.</p>
+	   	<p class="explination">Lets talk about the navbar used for Shoelace. Even if you scroll down on this site, the navbar will be "pinned" at the top. This is done with z-index. </p>
 	   	<xmp>
-	<div class="dropdowns">
-		<button class='btn btn-blue'>Click Me</button>
-		<ul>
-			<li><a href="#">Your Profile</a></li>
-			<li><a href="#">Edit Information</a></li>
-			<li><a href="#">Help</a></li>
-			<li><a href="#">Logout</a></li>
-		</ul>
+	<div class="navbar">
+	  <div class="navbar-wrap group">
+	    <nav class="navbar-brand">
+	      <a href="#">Shoelace</a>
+	    </nav>
+	    <nav class="navbar-nav">
+	      <ul class="group">
+	        <li>
+	        	<a href="#">CSS</a>
+	        	<ul class="navbar-nav-drop-down">
+	            <li><a href="#tables">Tables</a></li>
+	            <li><a href="#forms">Forms</a></li>
+	            <li><a href="#buttons">Buttons</a></li>
+	          </ul>
+	         </li>
+	        <li>
+	          <a href="#">Components</a>
+	          <ul class="navbar-nav-drop-down">
+	            <li><a href="#dropdowns">Dropdowns</a></li>
+	            <li><a href="#tabs">Tabs</a></li>
+	            <li><a href="#navbar">Navbar</a></li>
+	          </ul>
+	        </li>
+	        <li>
+	          <a href="#">JavaScript</a>
+	          <ul class="navbar-nav-drop-down">
+	            <li><a href="#modals">Modals</a></li>
+	            <li><a href="#carousel">Carousel</a></li>
+	          </ul>
+	        </li>
+	        <li><a href="#about">About Me</a></li>
+	      </ul>
+	    </nav>
+
+	  </div>
 	</div>
 			</xmp>
 	  </div>
 	  <div id="tab2">
+	  	<p class="explination">NOTE: I modified all the ul's list-style to none here because I wasn't going to use the bullet point for these CSS items. Please keep that in mind if you'd like to use ul's list-style for their normal bullet points.</p>
 	    <xmp>
-	.dropdowns {
-		ul {
-			margin-top: 0px;
-			padding-left:10px;
-			border: solid 2px black;
-			width: 150px;
-			li {
-				margin: 10px 5px;
-				border-bottom: 1px solid lightgray;
-			}
-		}
+	a {
+	  color: $primary-color;
+	  text-decoration: none;
+	}
+
+	ul {
+	  list-style: none;
+	}
+
+	.group:after {
+	  content: "";
+	  display: block;
+	  clear: both;
+	}
+
+	.navbar {
+	  border-bottom: 1px solid #333;
+	  background-color: $primary-background;
+	  position: fixed;
+	  width: 100%;
+	}
+
+	.navbar-wrap {
+	  margin: -10px 0px -15px 0px;
+	}
+
+	.navbar-brand {
+	  float: left;
+	}
+
+	.navbar-brand > a {
+	  display: block;
+	  font-size: 30px;
+	  padding: 18px 20px;
+	  margin: 0px 0px -18px 50px;
+	}
+
+	.navbar-nav > ul {
+		float: right;
+	}
+
+	.navbar-nav > ul > li {
+	  position: relative;
+	  float: left;
+	  display: block;
+	  width: 150px;
+	  text-align: center;
+	}
+
+	.navbar-nav > ul > li > a {
+	  display: block;
+	  padding: 10px 10px;
+	}
+
+	.navbar-nav > ul > li:hover > a {
+	  background: #c0c0c0;
+	}
+
+	.navbar-nav-drop-down {
+	  display: none;
+	  position: absolute;
+	  border: 2px solid #333;
+	  background: #fff;
+	  padding: 0px;
+	  width: 146px;
+	}
+
+	.navbar-nav > ul > li:hover > .navbar-nav-drop-down {
+	  display: block;
+	}
+
+	.navbar-nav-drop-down > li {
+	  border-top: 1px solid #333;
+	}
+
+	.navbar-nav-drop-down > li > a {
+	  display: block;
+	  padding: 5px 10px;
+	  color: $primary-color;
+	}
+
+	.navbar-nav-drop-down > li:hover > a {
+	  background: #c0c0c0;
 	}
 	    </xmp>
 	  </div>
 		<div id="tab3">
-	   	<p class="explination">A .load() method's callback sets the css attributes to make everything work. </p>
-
-	   	<xmp>
-	$(function () {
-	  var dropdownContainer = $('div.dropdowns ul');
-	  dropdownContainer.hide()
-	  
-	  $('div.dropdowns button').bind({
-	  	click: function(){
-	      dropdownContainer.show();
-	      $('div.dropdowns button').addClass('selected');
-    	},
-
-    	blur: function(){
-    		setTimeout(function(){dropdownContainer.hide();}, 150)
-      	$('div.dropdowns button').removeClass('selected');
-    	}
-		})
-	});
-			</xmp>
+	   	<p class="explination">None! The CSS :hover Selector does all the heavy lifting!</p>
 	  </div>
 	</div>
 </div>
