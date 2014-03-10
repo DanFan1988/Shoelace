@@ -1,0 +1,71 @@
+<header>
+	<div class="title">Modals</div>
+	<p>such magic</p>
+</header>
+
+<div class="examples">
+
+	<button class="btn btn-blue modal-button" data-modal="#modal1">Modal 1</button>
+	<button class="btn btn-green modal-button" data-modal="#modal2">Modal 2</button>
+
+	<div class='modal' id='modal1'>
+		<div class='modal-background'></div>
+    <div class='modal-content'>
+    	<div class='modal-header'>
+    		Modal header
+    		<button class="modal-x modal-close" data-modal="#modal1">x</button>
+    	</div>
+    	<div class='modal-body'>
+    		<p>In user interface design, a modal window is a child window that requires users to interact with it before they can return to operating the parent application, thus preventing the workflow on the application main window. Modal windows are often called heavy windows or modal dialogs because the window is often used to display a dialog box.</p>
+    		<p>Modal windows are commonly used in GUI systems to command user awareness and to display emergency states, although they have been argued to be ineffective for that use. Modal windows are prone to produce mode errors.</p>
+    		<p>On the Web, they are often used to show images in detail, in a pattern known as a Lightbox.</p>
+    	</div>
+	    <button class="btn btn-blue modal-bottom modal-close" data-modal="#modal1">Close</button>
+  	</div>
+	</div>
+
+	<div class='modal' id='modal2'>
+		<div class='modal-background'></div>
+    <div class='modal-content'>
+    	<div class='modal-header'>
+    		San Francisco
+    		<button class="modal-x modal-close" data-modal='#modal2'>x</button>
+    	</div>
+    	<div class='modal-body'>
+    		<p>San Francisco, officially the City and County of San Francisco, is the leading financial and cultural center of Northern California and the San Francisco Bay.</p>
+    		<p>The only consolidated city-county in California, San Francisco encompasses a land area of about 46.9 square miles (121 km2) on the northern end of the San Francisco Peninsula, giving it a density of about 17,620 people per square mile (6,803 people per km2). It is the most densely settled large city (population greater than 200,000) in the state of California and the second-most densely populated major city in the United States after New York City. San Francisco is the fourth most populous city in California, after Los Angeles, San Diego and San Jose, and the 14th most populous city in the United States—with a Census-estimated 2012 population of 825,863. The city is also the financial and cultural hub of the larger San Jose-San Francisco-Oakland combined statistical area, with a population of 8.4 million.</p>
+    	</div>
+	    <button class="btn btn-blue modal-bottom modal-close" data-modal="#modal2">Close</button>
+  	</div>
+	</div>
+
+</div>
+
+<script>
+
+	$('.modal-button').each(function(){
+		$(this).bind({
+			click: function(){
+				$($(this).data('modal')).toggle()
+			}
+		}).click()
+	})
+
+	$('.modal-close').each(function(){
+		$(this).bind({
+			click: function(){
+				$($(this).data('modal')).toggle()
+			}
+		})
+	})
+
+	// var modals = []
+	// $('button').each(function(){
+	// 	modals.push($(this).data('modal'))
+	// })
+
+	// modals.forEach(function(modal){
+	// 	$('div' + modal).hide()
+	// })
+
+</script>
