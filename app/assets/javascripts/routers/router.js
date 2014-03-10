@@ -12,7 +12,8 @@ Shoelace.Routers.Router = Backbone.Router.extend({
 		"dropdowns": "dropdowns",
 		"navbar": "navbar",
 		"modals": "modals",
-		"carousel": "carousel"
+		"carousel": "carousel",
+		"about": "about"
 	},
 
 	home: function(){
@@ -45,6 +46,11 @@ Shoelace.Routers.Router = Backbone.Router.extend({
 		this._swapView(view)
 	},
 
+	navbar: function(){
+		var view = new Shoelace.Views.Navbar
+		this._swapView(view)
+	},
+
 	modals: function(){
 		var view = new Shoelace.Views.Modals
 		this._swapView(view)
@@ -52,6 +58,11 @@ Shoelace.Routers.Router = Backbone.Router.extend({
 
 	carousel: function(){
 		var view = new Shoelace.Views.Carousel
+		this._swapView(view)
+	},
+
+	about: function(){
+		var view = new Shoelace.Views.About
 		this._swapView(view)
 	},
 

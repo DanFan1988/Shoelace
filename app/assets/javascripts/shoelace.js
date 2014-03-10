@@ -3,7 +3,7 @@ window.Shoelace = {
 	Routers: {},
 
 	initialize: function(){
-		var navbar = new Shoelace.Views.Navbar
+		var navbar = new Shoelace.Views.ShoelaceNavbar
 		$('#navbar').html(navbar.render().$el)
 		new Shoelace.Routers.Router({
 			$rootEl: $('#page')
