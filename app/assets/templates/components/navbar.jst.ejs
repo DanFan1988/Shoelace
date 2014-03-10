@@ -3,6 +3,79 @@
 	<p>Captain of the ship</p>
 </header>
 
-<div class="examples">
-	I will talk about the navbar i'm using
+<div class="code">
+	<div class="tabs">
+		<ul>
+			<li><a href="#tab1">HTML</a></li>
+			<li><a href="#tab2">CSS</a></li>
+			<li><a href="#tab3">JavaScript</a></li>
+		</ul>
+
+		<div id="tab1">
+	   	<p class="explination">Just add a "dropdowns" class to a div around your button with a ul.</p>
+	   	<xmp>
+	<div class="dropdowns">
+		<button class='btn btn-blue'>Click Me</button>
+		<ul>
+			<li><a href="#">Your Profile</a></li>
+			<li><a href="#">Edit Information</a></li>
+			<li><a href="#">Help</a></li>
+			<li><a href="#">Logout</a></li>
+		</ul>
+	</div>
+			</xmp>
+	  </div>
+	  <div id="tab2">
+	    <xmp>
+	.dropdowns {
+		ul {
+			margin-top: 0px;
+			padding-left:10px;
+			border: solid 2px black;
+			width: 150px;
+			li {
+				margin: 10px 5px;
+				border-bottom: 1px solid lightgray;
+			}
+		}
+	}
+	    </xmp>
+	  </div>
+		<div id="tab3">
+	   	<p class="explination">A .load() method's callback sets the css attributes to make everything work. </p>
+
+	   	<xmp>
+	$(function () {
+	  var dropdownContainer = $('div.dropdowns ul');
+	  dropdownContainer.hide()
+	  
+	  $('div.dropdowns button').bind({
+	  	click: function(){
+	      dropdownContainer.show();
+	      $('div.dropdowns button').addClass('selected');
+    	},
+
+    	blur: function(){
+    		setTimeout(function(){dropdownContainer.hide();}, 150)
+      	$('div.dropdowns button').removeClass('selected');
+    	}
+		})
+	});
+			</xmp>
+	  </div>
+	</div>
 </div>
+
+<script>
+	$(function(){
+    var tabContainers = $('div.tabs div');
+    
+    $('div.tabs ul a').click(function(event){
+ 			event.preventDefault();
+      tabContainers.hide().filter(this.hash).show();
+      
+      $('div.tabs ul a').removeClass('selected');
+      $(this).addClass('selected');
+    }).filter(':first').click();
+	});
+</script>

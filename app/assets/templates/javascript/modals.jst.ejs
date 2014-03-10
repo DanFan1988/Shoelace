@@ -38,11 +38,9 @@
 	    <button class="btn btn-blue modal-bottom modal-close" data-modal="#modal2">Close</button>
   	</div>
 	</div>
-
 </div>
 
 <script>
-
 	$('.modal-button').each(function(){
 		$(this).bind({
 			click: function(){
@@ -92,6 +90,7 @@
 			</xmp>
 	  </div>
 	  <div id="tab2">
+	  	<p class="explination"> There are some really cool things going on here! A fixed position background starting at the top left corner with 100% width and height lets the modal's "fade" affect go across the entire window. Opacity causes the nice "fade". In order to center the modal I set the top left of the modal-content to the middle of screen and adjusted the margins by the necessary ammounts to center the modal-content's middle in the middle of the window.</p>
 	    <xmp>
 	.modal-background {
 	    position: fixed; 
@@ -126,7 +125,6 @@
 		font-weight: bold;
 		text-align: center;
 		border-bottom: 1px solid lightgray;
-		z-index: 1;
 	}
 
 	.modal-body {
@@ -146,25 +144,23 @@
 	    </xmp>
 	  </div>
 		<div id="tab3">
-	   	<p class="explination">A .load() method's callback sets the css attributes to make everything work. </p>
-
+	   	<p class="explination">Some iteration over the modals, use of toggle and clicking the modals to toggle them off in the beginning makes this work.</p>
 	   	<xmp>
-	$(function () {
-	  var dropdownContainer = $('div.dropdowns ul');
-	  dropdownContainer.hide()
-	  
-	  $('div.dropdowns button').bind({
-	  	click: function(){
-	      dropdownContainer.show();
-	      $('div.dropdowns button').addClass('selected');
-    	},
+	$('.modal-button').each(function(){
+		$(this).bind({
+			click: function(){
+				$($(this).data('modal')).toggle()
+			}
+		}).click()
+	})
 
-    	blur: function(){
-    		setTimeout(function(){dropdownContainer.hide();}, 150)
-      	$('div.dropdowns button').removeClass('selected');
-    	}
+	$('.modal-close').each(function(){
+		$(this).bind({
+			click: function(){
+				$($(this).data('modal')).toggle()
+			}
 		})
-	});
+	})
 			</xmp>
 	  </div>
 	</div>
