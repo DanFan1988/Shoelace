@@ -27,6 +27,7 @@ gem "binding_of_caller"
 gem 'jquery-rails'
 gem 'backbone-on-rails'
 gem 'ejs'
+gem 'newrelic_rpm'
 
 
 # To use ActiveModel has_secure_password
