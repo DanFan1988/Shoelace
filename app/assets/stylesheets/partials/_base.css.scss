@@ -27,7 +27,14 @@ header {
 }
 }
 
-.examples {
+.examples, .code {
 	display: block;
 	margin: 50px;
+}
+
+.explination {
+	border: 1px solid gray;
+	padding: 5px;
+	margin: 10px;
+
 }

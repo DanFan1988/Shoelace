@@ -5,12 +5,104 @@
 
 <div class="examples">
 	<button class='btn'>Default</button>
+
 	<button class='btn btn-blue'>Blue</button>
-
 	<button class='btn btn-green'>Green</button>
-
 	<button class='btn btn-orange'>Orange</button>
-
 	<button class='btn btn-red'>Red</button>
 
 </div>
+
+<div class="code">
+	<div class="tabs">
+		<ul>
+			<li><a href="#tab1">HTML</a></li>
+			<li><a href="#tab2">CSS</a></li>
+		</ul>
+
+		<div id="tab1">
+	   	<p class="explination"> Adding the class "btn" and "btn-#{color}" will give you the respective buttons with their respective hover over colors</p>
+
+	   <xmp>
+	<button class='btn'>Default</button>
+
+	<button class='btn btn-blue'>Blue</button>
+	<button class='btn btn-green'>Green</button>
+	<button class='btn btn-orange'>Orange</button>
+	<button class='btn btn-red'>Red</button>
+		</xmp>
+	  </div>
+	  <div id="tab2">
+	    <xmp>
+	$primary-color: #27709b;
+
+	.btn {
+		display: inline-block;
+		text-align: center;
+		padding: 10px;
+		cursor: pointer;
+		font-size: 14px;
+		border-radius: 10px;
+		background-color: white;
+		color: black;
+		border: 1px solid black;
+		font: $font-stack;
+		min-width: 75px;
+	}
+
+	.btn:hover{
+		background-color: #dedede;
+	}
+
+	.btn-blue {
+		background-color: $primary-color;
+		color: white;
+	}
+
+	.btn-blue:hover {
+		background-color: #3333cc;
+	}
+
+	.btn-green {
+		background-color: green; 
+		color: white;
+	}
+
+	.btn-green:hover {
+		background-color: darkgreen;
+	}
+
+	.btn-orange {
+		background-color: orange;
+	}
+
+	.btn-orange:hover {
+		background-color: darkorange;
+	}
+
+	.btn-red {
+		background-color:red;
+		color: white;
+	}
+
+	.btn-red:hover{
+		background-color: darkred;
+	}
+	    </xmp>
+	  </div>
+	</div>
+</div>
+
+<script>
+	$(function(){
+    var tabContainers = $('div.tabs div');
+    
+    $('div.tabs ul a').click(function(event){
+ 			event.preventDefault();
+      tabContainers.hide().filter(this.hash).show();
+      
+      $('div.tabs ul a').removeClass('selected');
+      $(this).addClass('selected');
+    }).filter(':first').click();
+	});
+</script>
