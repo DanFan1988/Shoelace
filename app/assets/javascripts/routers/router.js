@@ -11,7 +11,8 @@ Shoelace.Routers.Router = Backbone.Router.extend({
 		"forms": "forms",
 		"dropdowns": "dropdowns",
 		"navbar": "navbar",
-		"modals": "modals"
+		"modals": "modals",
+		"carrousel": "carrousel"
 	},
 
 	home: function(){
@@ -46,6 +47,11 @@ Shoelace.Routers.Router = Backbone.Router.extend({
 
 	modals: function(){
 		var view = new Shoelace.Views.Modals
+		this._swapView(view)
+	},
+
+	carrousel: function(){
+		var view = new Shoelace.Views.Carrousel
 		this._swapView(view)
 	},
 
