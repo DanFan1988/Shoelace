@@ -15,6 +15,46 @@
   		<a href="#" class="carouselNext">Next</a>
 		</div>
 	</div>
+
+	<div class='modal' id='modal0'>
+		<div class='modal-background'></div>
+    <div class='modal-content'>
+    	<div class='modal-header'>
+    		<button class="modal-x modal-close" data-modal="#modal0">x</button>
+    	</div>
+    	<div class='modal-body'>
+    		<img src='dog.jpg' style= 'width: 460px'>
+    	</div>
+	    <button class="btn btn-blue modal-bottom modal-close" data-modal="#modal1">Close</button>
+  	</div>
+	</div>
+
+	<div class='modal' id='modal1'>
+		<div class='modal-background'></div>
+    <div class='modal-content'>
+    	<div class='modal-header'>
+    		<button class="modal-x modal-close" data-modal="#modal1">x</button>
+    	</div>
+    	<div class='modal-body'>
+    		<img src='cat.jpg' style= 'width: 460px'>
+    	</div>
+	    <button class="btn btn-blue modal-bottom modal-close" data-modal="#modal1">Close</button>
+  	</div>
+	</div>
+
+	<div class='modal' id='modal2'>
+		<div class='modal-background'></div>
+    <div class='modal-content'>
+    	<div class='modal-header'>
+    		<button class="modal-x modal-close" data-modal="#modal2">x</button>
+    	</div>
+    	<div class='modal-body'>
+    		<img src='penguin.jpg' style= 'width: 460px'>
+    	</div>
+	    <button class="btn btn-blue modal-bottom modal-close" data-modal="#modal1">Close</button>
+  	</div>
+	</div>
+
 </div>
 
 <script>
@@ -25,6 +65,24 @@ $('div.carousel li').children().first().load(function() {
    $('.carousel-nav').width(carouselWidth-4)
    $('.carousel').width(carouselWidth)
    $('.carousel ul').width(carouselWidth * (totalItems + 1))
+
+   $('div.carousel li').each(function(index, item){
+   	var that = this;
+   	 $(item).addClass("modal-button").attr('data-modal', '#modal' + index).bind({
+				click: function(){
+					$($(that).data('modal')).toggle()
+					console.log("wer")
+				}
+			}).click()
+   })
+
+	$('.modal-close').each(function(){
+		$(this).bind({
+			click: function(){
+				$($(this).data('modal')).toggle()
+			}
+		})
+	})
 
   var rotate = function(){
 	  $("div.carousel ul").animate({marginLeft:-(carouselWidth)},1000,function(){
@@ -52,7 +110,11 @@ $('div.carousel li').children().first().load(function() {
 		rotateBack();
 		clearInterval(rotator);
 	})
+
 });
+
+
+
 </script>
 
 <div class="code">
