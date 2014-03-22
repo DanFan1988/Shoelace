@@ -176,7 +176,11 @@ $('div.carousel li').children().first().load(function() {
 	    </xmp>
 	  </div>
 		<div id="tab3">
-	   	<p class="explination">A .load() method's callback sets the css attributes to make everything work. a setInterval calls the rotate method every 5000 milliseconds. However, manually clicking the rotaters will remove the setInterval. (Isn't it annoying when a carousel rotates forward automatically just after you rotated back?)</p>
+	   	<p class="explination">
+	   		NOTE: The carousel shown here have modal functionality (the one show in the modal tab) bound to them. The code below does not, however, combining the two together will produce this result!<br><br>
+
+
+	   		A .load() method's callback sets the css attributes to make everything work. a setInterval calls the rotate method every 5000 milliseconds. However, manually clicking the rotaters will remove the setInterval. (Isn't it annoying when a carousel rotates forward automatically just after you rotated back?)</p>
 
 	   	<xmp>
 	$('div.carousel li').children().first().load(function() {
