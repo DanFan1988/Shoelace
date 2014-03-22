@@ -71,7 +71,6 @@ $('div.carousel li').children().first().load(function() {
    	 $(item).addClass("modal-button").attr('data-modal', '#modal' + index).bind({
 				click: function(){
 					$($(that).data('modal')).toggle()
-					console.log("wer")
 				}
 			}).click()
    })
