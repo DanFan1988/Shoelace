@@ -1,1 +1,5 @@
 == Welcome to Shoelace
+
+Inspired by Twitter Bootstrap, Shoelace is comprised of code snippets for "widgets" like modals, carousels, dropdowns or just prettier HTML elements! Written over the weekend of 3/7 - 3/9.
+
+No Front-End Frameworks were used in the creation of Shoelace's "widget". Just good 'ol JavaScript, jQuery, HTML and CSS (SASS)
